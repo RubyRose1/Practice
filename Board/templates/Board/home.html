@@ -1,0 +1,23 @@
+{% extends 'Board/base.html' %}
+
+{% block title %}
+Board
+{% endblock %}
+
+{% block content %}
+
+<style>
+   h1 {
+    margin-bottom: 50px;
+   }
+</style>
+
+<h1>RubyRose1 Blog</h1>
+
+{% for article in articles %}
+    <h4><a href="{% url 'article' article.id %}">{{ article.title }}</a></h4>
+    <pre>{{ article.get_short_text }}</pre>
+{% endfor %}
+
+
+{% endblock %}
